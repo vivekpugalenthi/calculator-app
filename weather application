@@ -1,0 +1,36 @@
+#weather App
+from tkinter import *
+import requests
+import json
+
+root=Tk()
+root.title('Weather app')
+
+def get_data(root):
+    city=user.get()
+    print(city)
+    api="https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=7ed4144374a09a985257005a28778d3e"
+    resp=requests.get(api)
+    #print(resp)
+    if resp.status_code==200:
+        data=resp.json()
+        temp=int(data['main']['temp']-273.15)
+        pressure=int(data['main']['humidity'])
+        hum=int(data['main']['humidity'])
+        condition=data ['weather'] [0] ['main']
+        wind=int(data['wind']['speed'])
+        #print(temp,pressure,hum,wind,condition)
+        output="temperature:"+str(temp)+"°C"+"\n"+"pressure:"+str(pressure)+"hpa"+"\n"+"humidity:"+str(hum)+"%"+"\n"+"wind:"+str(wind)+"m/s"+"\n"+"condition:"+condition
+        print(output)
+        label.configure(text=output)
+
+
+
+
+user=Entry(root,width=30,justify='center',font=('poppins',20,'bold'))
+user.grid(row=0,column=0)
+user.bind("<Return>",get_data)
+label=Label(root,font=('poppins',20,'bold'))
+label.grid(row=1,column=0)
+
+root.mainloop()
