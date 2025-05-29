@@ -1,0 +1,11 @@
+weather application designed to provide accurate and up-to-date weather information to 
+users worldwide. Leveraging data from reliable sources, Weather-wise offers comprehensive weather 
+forecasts, current conditions, and interactive features to help users plan their activities and stay informed 
+about weather changes. 
+ 
+01.Current Weather Conditions: 
+ 
+Real-time display of current weather conditions, including temperature, humidity, wind speed, and 
+atmospheric pressure. 
+Location-based weather updates using GPS or manual city search functionality. 
+Visual representation of weather conditions through icons and descriptive text.
